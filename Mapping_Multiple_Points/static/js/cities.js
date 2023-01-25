@@ -28,4 +28,8 @@ let cities = [{
   state: "AZ",
   population: 1660272
 }
+<<<<<<< HEAD
 ];
+=======
+];
+>>>>>>> Mapping_GeoJSON_Points
