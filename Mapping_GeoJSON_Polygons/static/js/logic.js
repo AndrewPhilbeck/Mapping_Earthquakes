@@ -1,3 +1,4 @@
+console.log("mappingGeoJSONPolygons");
 // We create the tile layer that will be the background of our map.
 let light = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -26,11 +27,11 @@ let map = L.map('mapid', {
 L.control.layers(baseMaps).addTo(map);
 
 // Accessing the Toronto airline routes GeoJSON URL.
-let torontoData = "https://raw.githubusercontent.com/AndrewPhilbeck/Mapping_Earthquakes/Mapping_GeoJSON_Linestrings/Mapping_GeoJSON_Linestrings/torontoRoutes.json";
+let torontoNeighborhoods = "static/data/torontoNeighborhoods.json";
 
 // console.log(torontoData);
 // // Grabbing our GeoJSON data.
-d3.json(torontoData).then(function (data) {
+d3.json(torontoNeighborhoods).then(function (data) {
   console.log(data);
   // Creating a GeoJSON layer with the retrieved data.
   L.geoJSON(data, {
@@ -44,4 +45,4 @@ d3.json(torontoData).then(function (data) {
   .addTo(map);
 });
 
-
+console.log(torontoNeighborhoods);
